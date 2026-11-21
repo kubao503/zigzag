@@ -29,6 +29,10 @@ class Point:
     x: float
     y: float
 
+    def __lt__(self, other):
+        assert isinstance(other, Point)
+        return self.x < other.x
+
 
 @dataclass
 class Abs:

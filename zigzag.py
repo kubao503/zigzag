@@ -10,6 +10,8 @@ def zigzag_two_points(first: Point, second: Point) -> Equation:
 
 
 def zigzag(points: list[Point]) -> Equation:
+    points.sort()
+
     if len(points) == 0:
         return Equation()
     elif len(points) == 1:

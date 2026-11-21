@@ -93,3 +93,26 @@ def test_zigzag_four_points():
     assert equation.abss == [Abs(1, 1), Abs(-1, 2)]
     assert equation.a == -1
     assert equation.b == 2
+
+
+def test_zigzag_two_points_unsorted():
+    points = [
+        Point(2, 3),
+        Point(1, 2),
+    ]
+    equation = zigzag(points)
+    assert equation.abss == []
+    assert equation.a == 1
+    assert equation.b == 1
+
+
+def test_zigzag_three_points_unsorted():
+    points = [
+        Point(1, 1),
+        Point(-1, 1),
+        Point(0, 0),
+    ]
+    equation = zigzag(points)
+    assert equation.abss == [Abs(1, 0)]
+    assert equation.a == 0
+    assert equation.b == 0
