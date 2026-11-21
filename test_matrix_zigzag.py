@@ -1,6 +1,6 @@
 import pytest
 
-from zigzag import Row, zigzag
+from matrix_zigzag import Row, zigzag
 
 
 def test_zigzag_two_points():
