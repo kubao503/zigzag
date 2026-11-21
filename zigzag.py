@@ -1,4 +1,5 @@
-from itertools import pairwise
+from itertools import batched, pairwise
+import sys
 
 from common import Abs, Equation, Point
 
@@ -33,12 +34,15 @@ def zigzag(points: list[Point]) -> Equation:
 
 
 def main():
-    points = [
-        Point(-1, 7),
-        Point(1, 5),
-        Point(3, 8),
-        Point(4, 0),
-    ]
+    # coordinates = [
+    #     -6, 6,
+    #     -3, 1,
+    #     -2, 5,
+    #     3, 5,
+    # ]
+    coordinates = [float(arg) for arg in sys.argv[1:]]
+    assert len(coordinates) % 2 == 0, "Got uneven number of points"
+    points = [Point(x, y) for x, y in batched(coordinates, n=2)]
     eqaution = zigzag(points)
     print(eqaution)
 

@@ -4,8 +4,8 @@ import math
 
 def format_coef(val: float, leading = False) -> str:
     if leading:
-        return str(val) if val >= 0 else f'-{abs(val)}'
-    return f' + {val}' if val >= 0 else f' - {abs(val)}'
+        return f'{val:.3g}' if val >= 0 else f'-{abs(val):.3g}'
+    return f' + {val:.3g}' if val >= 0 else f' - {abs(val):.3g}'
 
 
 def format_term(coef: float, variable: str, leading = False) -> str:
